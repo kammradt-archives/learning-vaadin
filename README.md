@@ -1,24 +1,24 @@
-# Project Base for Vaadin and Spring Boot
+<h1 align="center">Welcome to My first Vaadin APP 👋</h1>
+<p>
+  <a href="#" target="_blank">
+    <img alt="License: UNLICENSED" src="https://img.shields.io/badge/License-UNLICENSED-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/kammzinho" target="_blank">
+    <img alt="Twitter: kammzinho" src="https://img.shields.io/twitter/follow/kammzinho.svg?style=social" />
+  </a>
+</p>
 
-This project can be used as a starting point to create your own Vaadin application with Spring Boot.
-It contains all the necessary configuration and some placeholder files to get you started.
+> I'm just learning some Vaadin to create web apps with Java
 
-The best way to create your own project based on this starter is [start.vaadin.com](https://start.vaadin.com/) - you can get only the necessary parts and choose the package naming you want to use.
+## Author
 
-## Running the Application
+👤 **Vinicius Kammradt**
 
-Import the project to the IDE of your choosing as a Maven project.
+* Website: https://kammradt.now.sh/
+* Twitter: [@kammzinho](https://twitter.com/kammzinho)
+* Github: [@kammradt](https://github.com/kammradt)
+* LinkedIn: [@vinicius-kammradt](https://linkedin.com/in/vinicius-kammradt)
 
-Run the application using `mvn spring-boot:run` or by running the `Application` class directly from your IDE.
+## Show your support
 
-Open http://localhost:8080/ in your browser.
-
-If you want to run the application locally in the production mode, run `mvn spring-boot:run -Pproduction`.
-
-To run Integration Tests, execute `mvn verify -Pintegration-tests`.
-
-## More Information
-
-- [Vaadin Flow](https://vaadin.com/flow) documentation
-- [Using Vaadin and Spring](https://vaadin.com/docs/v14/flow/spring/tutorial-spring-basic.html) article
-
+Give a ⭐️ if this project helped you!
