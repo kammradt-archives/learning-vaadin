@@ -1,36 +1,36 @@
 package com.kammradt.learning.vaadin;
 
-import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.dependency.CssImport;
-import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.datepicker.DatePicker;
+import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.PWA;
-import org.springframework.beans.factory.annotation.Autowired;
 
-@Route
-@PWA(name = "Vaadin Application",
-        shortName = "Vaadin App",
-        description = "This is an example Vaadin application.",
-        enableInstallPrompt = true)
-@CssImport("./styles/shared-styles.css")
-@CssImport(value = "./styles/vaadin-text-field-styles.css", themeFor = "vaadin-text-field")
+
+@Route(value = "")
 public class MainView extends VerticalLayout {
 
-    public MainView(@Autowired GreetService service) {
+    public MainView() {
+        DatePicker datePicker = new DatePicker("Choose a date!");
 
-        TextField textField = new TextField("Fala seu nomezinho");
+        HorizontalLayout horizontalLayout = new HorizontalLayout();
+        horizontalLayout.setDefaultVerticalComponentAlignment(Alignment.END);
 
-        Button button = new Button("Quero salve", e -> Notification.show(service.greet(textField.getValue())));
+        Button button = new Button("Click!");
+        button.addClickListener(e -> clickHandler(datePicker));
 
-        button.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        button.addClickShortcut(Key.ENTER);
+        horizontalLayout.add(button, datePicker);
+        add(horizontalLayout);
+    }
 
-        addClassName("centered-content");
-        add(textField, button);
+    private void clickHandler(DatePicker datePicker) {
+        var date = datePicker.getValue();
+        var paragraph = new Paragraph();
+        paragraph.setText("Please, select a Date!");
+        if (date != null)
+           paragraph.setText("Clicked at: " + date);
+        add(paragraph);
     }
 
 }
