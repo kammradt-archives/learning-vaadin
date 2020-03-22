@@ -1,4 +1,4 @@
-package com.kammradt.learning.vaadin;
+package com.kammradt.learning.vaadin.ui;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.datepicker.DatePicker;
