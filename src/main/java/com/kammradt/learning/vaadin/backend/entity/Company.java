@@ -1,19 +1,21 @@
 package com.kammradt.learning.vaadin.backend.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
-import java.util.Set;
+import java.util.List;
 
-@Data
+@Getter
+@Setter
 @Entity
-public class Company extends AbstractEntity {
+public class Company extends BaseEntity {
 
     private String name;
 
     @OneToMany(mappedBy = "company", fetch = FetchType.EAGER)
-    private Set<Contact> employees;
+    private List<Contact> employees;
 
 }

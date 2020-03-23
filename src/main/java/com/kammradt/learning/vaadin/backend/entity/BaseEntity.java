@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @MappedSuperclass
-public abstract class AbstractEntity implements Cloneable {
+public abstract class BaseEntity implements Cloneable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -17,5 +17,4 @@ public abstract class AbstractEntity implements Cloneable {
     public boolean isPersisted() {
         return id != null;
     }
-
 }

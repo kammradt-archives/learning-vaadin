@@ -1,6 +1,7 @@
 package com.kammradt.learning.vaadin.backend.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -10,9 +11,10 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@Data
+@Getter
+@Setter
 @Entity
-public class Contact extends AbstractEntity implements Cloneable {
+public class Contact extends BaseEntity {
 
     public enum Status {
         ImportedLead, NotContacted, Contacted, Customer, ClosedLost

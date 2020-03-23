@@ -41,6 +41,7 @@ public class Loader implements ApplicationRunner {
         p2.setLastName("Famoso");
         p2.setEmail("alves.engenheiro@gmail.com");
         p2.setStatus(Contact.Status.Contacted);
+        contactService.save(p2);
 
 
     }
