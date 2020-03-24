@@ -1,8 +1,8 @@
 package com.kammradt.learning.vaadin.ui;
 
-import com.kammradt.learning.vaadin.backend.entity.Company;
-import com.kammradt.learning.vaadin.backend.entity.Contact;
-import com.kammradt.learning.vaadin.backend.entity.ContactService;
+import com.kammradt.learning.vaadin.backend.company.Company;
+import com.kammradt.learning.vaadin.backend.contact.Contact;
+import com.kammradt.learning.vaadin.backend.contact.ContactService;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -29,7 +29,6 @@ public class MainView extends VerticalLayout {
     }
 
     private void updateList() {
-        System.out.println(filterText.getValue());
         grid.setItems(contactService.findAll(filterText.getValue()));
     }
 

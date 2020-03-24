@@ -1,5 +1,7 @@
-package com.kammradt.learning.vaadin.backend.entity;
+package com.kammradt.learning.vaadin.backend.contact;
 
+import com.kammradt.learning.vaadin.backend.entity.BaseEntity;
+import com.kammradt.learning.vaadin.backend.company.Company;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,4 +1,4 @@
-package com.kammradt.learning.vaadin.backend.entity;
+package com.kammradt.learning.vaadin.backend.contact;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

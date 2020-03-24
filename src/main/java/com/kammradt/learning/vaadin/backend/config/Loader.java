@@ -1,5 +1,9 @@
-package com.kammradt.learning.vaadin.backend.entity;
+package com.kammradt.learning.vaadin.backend.config;
 
+import com.kammradt.learning.vaadin.backend.company.Company;
+import com.kammradt.learning.vaadin.backend.company.CompanyService;
+import com.kammradt.learning.vaadin.backend.contact.Contact;
+import com.kammradt.learning.vaadin.backend.contact.ContactService;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
