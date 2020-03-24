@@ -3,7 +3,10 @@ package com.kammradt.learning.vaadin.ui;
 import com.kammradt.learning.vaadin.backend.company.Company;
 import com.kammradt.learning.vaadin.backend.contact.Contact;
 import com.kammradt.learning.vaadin.backend.contact.ContactService;
+import com.kammradt.learning.vaadin.ui.contact.ContactForm;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
@@ -11,20 +14,30 @@ import com.vaadin.flow.router.Route;
 
 
 @Route("")
+@CssImport("./styles/shared-styles.css")
 public class MainView extends VerticalLayout {
 
+    ContactForm form;
     Grid<Contact> grid = new Grid<>(Contact.class);
     TextField filterText = new TextField();
+
     private ContactService contactService;
 
     public MainView(ContactService contactService) {
         this.contactService = contactService;
         addClassName("list-view");
         setSizeFull();
+
         configureGrid();
         configureFilter();
-        
-        add(filterText, grid);
+
+        form = new ContactForm();
+
+        Div content = new Div(grid, form);
+        content.addClassName("content");
+        content.setSizeFull();
+
+        add(filterText, content);
         updateList();
     }
 
