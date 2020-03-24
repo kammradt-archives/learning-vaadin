@@ -5,6 +5,8 @@ import com.kammradt.learning.vaadin.backend.entity.Contact;
 import com.kammradt.learning.vaadin.backend.entity.ContactService;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.Route;
 
 
@@ -12,6 +14,7 @@ import com.vaadin.flow.router.Route;
 public class MainView extends VerticalLayout {
 
     Grid<Contact> grid = new Grid<>(Contact.class);
+    TextField filterText = new TextField();
     private ContactService contactService;
 
     public MainView(ContactService contactService) {
@@ -19,13 +22,15 @@ public class MainView extends VerticalLayout {
         addClassName("list-view");
         setSizeFull();
         configureGrid();
-
-        add(grid);
+        configureFilter();
+        
+        add(filterText, grid);
         updateList();
     }
 
     private void updateList() {
-        grid.setItems(contactService.findAll());
+        System.out.println(filterText.getValue());
+        grid.setItems(contactService.findAll(filterText.getValue()));
     }
 
     private void configureGrid() {
@@ -44,5 +49,13 @@ public class MainView extends VerticalLayout {
     private void enableAutoWidth(Grid.Column<Contact> col) {
         col.setAutoWidth(true);
     }
+
+    private void configureFilter() {
+        filterText.setPlaceholder("Search \uD83D\uDD0E");
+        filterText.setClearButtonVisible(true);
+        filterText.setValueChangeMode(ValueChangeMode.LAZY);
+        filterText.addValueChangeListener(e -> updateList());
+    }
+
 
 }

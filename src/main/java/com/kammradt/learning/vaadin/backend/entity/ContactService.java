@@ -18,4 +18,10 @@ public class ContactService {
     public List<Contact> findAll() {
         return contactRepository.findAll();
     }
+
+    public List<Contact> findAll(String filterText) {
+        if (filterText.isBlank())
+            return findAll();
+        return contactRepository.findAllByFirstNameIgnoreCaseContainingOrLastNameIgnoreCaseContainingOrEmailIgnoreCaseContaining(filterText, filterText, filterText);
+    }
 }
