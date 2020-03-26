@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class CompanyService {
 
-    private CompanyRepository companyRepository;
+  private final CompanyRepository companyRepository;
 
-    public Long count() {
-        return companyRepository.count();
-    }
+  public Long count() {
+    return companyRepository.count();
+  }
 
-    public Company save(Company company) {
-        return companyRepository.save(company);
-    }
+  public Company save(Company company) {
+    return companyRepository.save(company);
+  }
 }

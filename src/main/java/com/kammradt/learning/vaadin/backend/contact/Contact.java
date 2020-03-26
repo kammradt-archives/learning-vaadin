@@ -1,7 +1,7 @@
 package com.kammradt.learning.vaadin.backend.contact;
 
-import com.kammradt.learning.vaadin.backend.entity.BaseEntity;
 import com.kammradt.learning.vaadin.backend.company.Company;
+import com.kammradt.learning.vaadin.backend.entity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,26 +18,21 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Contact extends BaseEntity {
 
-    public enum Status {
-        ImportedLead, NotContacted, Contacted, Customer, ClosedLost
-    }
+  @NotBlank private String firstName;
+  @NotBlank private String lastName;
+  @ManyToOne private Company company;
 
-    @NotBlank
-    private String firstName;
+  @Enumerated(EnumType.STRING)
+  @NotNull
+  private Status status;
 
-    @NotBlank
-    private String lastName;
+  @Email @NotBlank private String email;
 
-    @ManyToOne
-    private Company company;
-
-    @Enumerated(EnumType.STRING)
-    @NotNull
-    private Status status;
-
-    @Email
-    @NotBlank
-    private String email;
-
-
+  public enum Status {
+    ImportedLead,
+    NotContacted,
+    Contacted,
+    Customer,
+    ClosedLost
+  }
 }

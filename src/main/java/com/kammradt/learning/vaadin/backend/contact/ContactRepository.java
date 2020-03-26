@@ -7,6 +7,7 @@ import java.util.UUID;
 
 public interface ContactRepository extends JpaRepository<Contact, UUID> {
 
-    List<Contact> findAllByFirstNameIgnoreCaseContainingOrLastNameIgnoreCaseContainingOrEmailIgnoreCaseContaining(String firstName, String lastName, String email);
-
+  List<Contact>
+      findAllByFirstNameIgnoreCaseContainingOrLastNameIgnoreCaseContainingOrEmailIgnoreCaseContaining(
+          String firstName, String lastName, String email);
 }

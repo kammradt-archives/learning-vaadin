@@ -13,38 +13,30 @@ import com.vaadin.flow.component.textfield.TextField;
 
 public class ContactForm extends FormLayout {
 
-    TextField firstName = new TextField("First name");
-    TextField lastName = new TextField("Last name");
-    EmailField email = new EmailField("Email");
-    ComboBox<Contact.Status> status = new ComboBox<>("Status");
-    ComboBox<Company> company = new ComboBox<>("Company");
+  TextField firstName = new TextField("First name");
+  TextField lastName = new TextField("Last name");
+  EmailField email = new EmailField("Email");
+  ComboBox<Contact.Status> status = new ComboBox<>("Status");
+  ComboBox<Company> company = new ComboBox<>("Company");
 
-    Button save = new Button("Save");
-    Button delete = new Button("Delete");
-    Button close = new Button("Cancel");
+  Button save = new Button("Save");
+  Button delete = new Button("Delete");
+  Button close = new Button("Cancel");
 
-    public ContactForm() {
-        addClassName("contact-form");
-        add(
-                firstName,
-                lastName,
-                email,
-                status,
-                company,
-                createButtonsLayout()
-        );
-    }
+  public ContactForm() {
+    addClassName("contact-form");
+    add(firstName, lastName, email, status, company, createButtonsLayout());
+  }
 
-    private HorizontalLayout createButtonsLayout() {
-        save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
-        save.addClickShortcut(Key.ENTER );
+  private HorizontalLayout createButtonsLayout() {
+    save.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+    save.addClickShortcut(Key.ENTER);
 
-        delete.addThemeVariants(ButtonVariant.LUMO_ERROR);
+    delete.addThemeVariants(ButtonVariant.LUMO_ERROR);
 
-        close.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
-        close.addClickShortcut(Key.ESCAPE);
+    close.addThemeVariants(ButtonVariant.LUMO_TERTIARY);
+    close.addClickShortcut(Key.ESCAPE);
 
-        return new HorizontalLayout(save, delete, close);
-    }
-
+    return new HorizontalLayout(save, delete, close);
+  }
 }

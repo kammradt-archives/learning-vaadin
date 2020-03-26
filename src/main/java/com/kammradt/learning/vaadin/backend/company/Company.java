@@ -15,9 +15,8 @@ import java.util.List;
 @Entity
 public class Company extends BaseEntity {
 
-    private String name;
+  private String name;
 
-    @OneToMany(mappedBy = "company", fetch = FetchType.EAGER)
-    private List<Contact> employees;
-
+  @OneToMany(mappedBy = "company", fetch = FetchType.EAGER)
+  private List<Contact> employees;
 }
