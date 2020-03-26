@@ -10,6 +10,8 @@ import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.data.binder.BeanValidationBinder;
+import com.vaadin.flow.data.binder.Binder;
 
 public class ContactForm extends FormLayout {
 
@@ -23,8 +25,10 @@ public class ContactForm extends FormLayout {
   Button delete = new Button("Delete");
   Button close = new Button("Cancel");
 
-  public ContactForm() {
+  Binder<Contact> binder = new BeanValidationBinder<>(Contact.class);
     addClassName("contact-form");
+    binder.bindInstanceFields(this);
+    status.setItems(Contact.Status.values());
     add(firstName, lastName, email, status, company, createButtonsLayout());
   }
 
