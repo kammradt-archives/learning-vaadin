@@ -52,14 +52,14 @@ public class MainView extends VerticalLayout {
     grid.setSizeFull();
     grid.removeColumnByKey("company");
     grid.setColumns("firstName", "lastName", "email", "status");
-    grid.addColumn(
-            contact -> {
-              Company company = contact.getCompany();
-              return company == null ? "-" : company.getName();
-            })
-        .setHeader("Company");
+    grid.addColumn(this::getCompanyFormattedName).setHeader("Company");
 
     grid.getColumns().forEach(this::enableAutoWidth);
+  }
+
+  private Object getCompanyFormattedName(Contact contact) {
+    Company company = contact.getCompany();
+    return company == null ? "-" : company.getName();
   }
 
   private void enableAutoWidth(Grid.Column<Contact> col) {
