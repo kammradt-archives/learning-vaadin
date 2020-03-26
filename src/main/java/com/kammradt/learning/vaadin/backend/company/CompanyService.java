@@ -3,6 +3,8 @@ package com.kammradt.learning.vaadin.backend.company;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @AllArgsConstructor
 @Service
 public class CompanyService {
@@ -15,5 +17,9 @@ public class CompanyService {
 
   public Company save(Company company) {
     return companyRepository.save(company);
+  }
+
+  public List<Company> findAll() {
+    return companyRepository.findAll();
   }
 }

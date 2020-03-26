@@ -1,6 +1,7 @@
 package com.kammradt.learning.vaadin.ui;
 
 import com.kammradt.learning.vaadin.backend.company.Company;
+import com.kammradt.learning.vaadin.backend.company.CompanyService;
 import com.kammradt.learning.vaadin.backend.contact.Contact;
 import com.kammradt.learning.vaadin.backend.contact.ContactService;
 import com.kammradt.learning.vaadin.ui.contact.ContactForm;
@@ -21,16 +22,18 @@ public class MainView extends VerticalLayout {
   TextField filterText = new TextField();
 
   private final ContactService contactService;
+  private final CompanyService companyService;
 
-  public MainView(ContactService contactService) {
+  public MainView(ContactService contactService, CompanyService companyService) {
     this.contactService = contactService;
+    this.companyService = companyService;
     addClassName("list-view");
     setSizeFull();
 
     configureGrid();
     configureFilter();
 
-    form = new ContactForm();
+    form = new ContactForm(companyService.findAll());
 
     Div content = new Div(grid, form);
     content.addClassName("content");

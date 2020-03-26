@@ -13,6 +13,8 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
 
+import java.util.List;
+
 public class ContactForm extends FormLayout {
 
   TextField firstName = new TextField("First name");
@@ -26,9 +28,15 @@ public class ContactForm extends FormLayout {
   Button close = new Button("Cancel");
 
   Binder<Contact> binder = new BeanValidationBinder<>(Contact.class);
+
+  public ContactForm(List<Company> companies) {
     addClassName("contact-form");
+
     binder.bindInstanceFields(this);
     status.setItems(Contact.Status.values());
+    company.setItems(companies);
+    company.setItemLabelGenerator(Company::getName);
+
     add(firstName, lastName, email, status, company, createButtonsLayout());
   }
 
