@@ -74,7 +74,7 @@ public class ContactForm extends FormLayout {
     fireEvent(new ContactFormEvent.CloseEvent(this));
   }
 
-  private void setContact(Contact contact) {
+  public void setContact(Contact contact) {
     binder.setBean(contact);
   }
 

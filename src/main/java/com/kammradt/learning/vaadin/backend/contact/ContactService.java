@@ -25,4 +25,8 @@ public class ContactService {
         .findAllByFirstNameIgnoreCaseContainingOrLastNameIgnoreCaseContainingOrEmailIgnoreCaseContaining(
             filterText, filterText, filterText);
   }
+
+  public void delete(Contact contact) {
+    contactRepository.delete(contact);
+  }
 }
