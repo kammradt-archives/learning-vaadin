@@ -1,4 +1,4 @@
-package com.kammradt.learning.vaadin.ui.contact;
+package com.kammradt.learning.vaadin.ui.views.list.contact;
 
 import com.kammradt.learning.vaadin.backend.contact.Contact;
 import com.vaadin.flow.component.ComponentEvent;

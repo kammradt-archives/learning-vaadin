@@ -1,11 +1,11 @@
-package com.kammradt.learning.vaadin.ui;
+package com.kammradt.learning.vaadin.ui.views.list;
 
 import com.kammradt.learning.vaadin.backend.company.Company;
 import com.kammradt.learning.vaadin.backend.company.CompanyService;
 import com.kammradt.learning.vaadin.backend.contact.Contact;
 import com.kammradt.learning.vaadin.backend.contact.ContactService;
-import com.kammradt.learning.vaadin.ui.contact.ContactForm;
-import com.kammradt.learning.vaadin.ui.contact.ContactFormEvent;
+import com.kammradt.learning.vaadin.ui.views.list.contact.ContactForm;
+import com.kammradt.learning.vaadin.ui.views.list.contact.ContactFormEvent;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.grid.Grid;
@@ -14,11 +14,13 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route("")
+@Route(value = "", layout = MainLayout.class)
+@PageTitle("Contacts ")
 @CssImport("./styles/shared-styles.css")
-public class MainView extends VerticalLayout {
+public class ListView extends VerticalLayout {
 
   ContactForm form;
   Grid<Contact> grid = new Grid<>(Contact.class);
@@ -27,7 +29,7 @@ public class MainView extends VerticalLayout {
   private final ContactService contactService;
   private final CompanyService companyService;
 
-  public MainView(ContactService contactService, CompanyService companyService) {
+  public ListView(ContactService contactService, CompanyService companyService) {
     this.contactService = contactService;
     this.companyService = companyService;
     addClassName("list-view");

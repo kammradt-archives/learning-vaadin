@@ -1,4 +1,4 @@
-package com.kammradt.learning.vaadin.ui.contact;
+package com.kammradt.learning.vaadin.ui.views.list.contact;
 
 import com.kammradt.learning.vaadin.backend.company.Company;
 import com.kammradt.learning.vaadin.backend.contact.Contact;
@@ -79,7 +79,7 @@ public class ContactForm extends FormLayout {
   }
 
   public <T extends ComponentEvent<?>> Registration addListener(
-      Class<T> eventType, ComponentEventListener<T> listener) { //
+      Class<T> eventType, ComponentEventListener<T> listener) {
     return getEventBus().addListener(eventType, listener);
   }
 }

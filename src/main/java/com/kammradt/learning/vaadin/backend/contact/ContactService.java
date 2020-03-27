@@ -29,4 +29,8 @@ public class ContactService {
   public void delete(Contact contact) {
     contactRepository.delete(contact);
   }
+
+  public long count() {
+    return contactRepository.count();
+  }
 }
