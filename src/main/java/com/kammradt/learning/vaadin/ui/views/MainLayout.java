@@ -1,6 +1,7 @@
-package com.kammradt.learning.vaadin.ui.views.list;
+package com.kammradt.learning.vaadin.ui.views;
 
 import com.kammradt.learning.vaadin.ui.views.dashboard.DashboardView;
+import com.kammradt.learning.vaadin.ui.views.list.ListView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.dependency.CssImport;
@@ -11,7 +12,13 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.HighlightConditions;
 import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.server.PWA;
 
+@PWA(
+    name = "CRM",
+    shortName = "CRM",
+    offlineResources = {"./styles/offline.css", "./images/offline.png"}
+    )
 @CssImport("./styles/shared-styles.css")
 public class MainLayout extends AppLayout {
 

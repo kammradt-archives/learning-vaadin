@@ -4,6 +4,7 @@ import com.kammradt.learning.vaadin.backend.company.Company;
 import com.kammradt.learning.vaadin.backend.company.CompanyService;
 import com.kammradt.learning.vaadin.backend.contact.Contact;
 import com.kammradt.learning.vaadin.backend.contact.ContactService;
+import com.kammradt.learning.vaadin.ui.views.MainLayout;
 import com.kammradt.learning.vaadin.ui.views.list.contact.ContactForm;
 import com.kammradt.learning.vaadin.ui.views.list.contact.ContactFormEvent;
 import com.vaadin.flow.component.button.Button;

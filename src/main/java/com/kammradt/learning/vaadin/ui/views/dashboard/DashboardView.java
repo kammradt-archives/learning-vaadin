@@ -2,7 +2,7 @@ package com.kammradt.learning.vaadin.ui.views.dashboard;
 
 import com.kammradt.learning.vaadin.backend.company.CompanyService;
 import com.kammradt.learning.vaadin.backend.contact.ContactService;
-import com.kammradt.learning.vaadin.ui.views.list.MainLayout;
+import com.kammradt.learning.vaadin.ui.views.MainLayout;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.charts.Chart;
 import com.vaadin.flow.component.charts.model.ChartType;
